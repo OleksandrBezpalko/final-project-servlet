@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://java.sun.com/xml/ns/javaee"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+                        http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         id="WebApp_ID" version="3.0">
+
+    <display-name>FinalProjectServlet</display-name>
+
+    <filter>
+        <filter-name>CharsetFilter</filter-name>
+        <filter-class>com.training.java.controller.filter.EncodingFilter</filter-class>
+        <init-param>
+            <param-name>requestEncoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>CharsetFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <servlet>
+        <servlet-name>Servl</servlet-name>
+        <servlet-class>com.training.java.controller.Servlet</servlet-class>
+
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Servl</servlet-name>
+        <url-pattern>/adminOrder</url-pattern>
+        <url-pattern>/</url-pattern>
+        <url-pattern>/userInfo</url-pattern>
+        <url-pattern>/employeeTask</url-pattern>
+        <url-pattern>/menu</url-pattern>
+        <url-pattern>/add</url-pattern>
+        <url-pattern>/addToCard</url-pattern>
+        <url-pattern>/order</url-pattern>
+        <url-pattern>/removeD</url-pattern>
+        <url-pattern>/addedOrder</url-pattern>
+        <url-pattern>/addMoney</url-pattern>
+        <url-pattern>/addBalance</url-pattern>
+        <url-pattern>/user_confirm</url-pattern>
+        <url-pattern>/checkOrderUser</url-pattern>
+        <url-pattern>/checkOrderUser_confirm</url-pattern>
+        <url-pattern>/replenish_stock_of_products</url-pattern>
+        <url-pattern>/adminPage</url-pattern>
+        <url-pattern>/checkOrder</url-pattern>
+        <url-pattern>/checkOrder_confirm</url-pattern>
+        <url-pattern>/user</url-pattern>
+    </servlet-mapping>
+
+    <!-- Resources -->
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>/lib/*</url-pattern>
+    </servlet-mapping>
+
+    <error-page>
+        <exception-type>java.lang.Exception</exception-type>
+        <location>/WEB-INF/error.jsp</location>
+    </error-page>
+
+
+</web-app>
